@@ -1,4 +1,5 @@
 @import url("//at.alicdn.com/t/font_2266068_otkvzqnxk0g.css");
+@import url(../font/iconfont.css);
 :root.appearance-light {
   --primary-bg-color: #fff;
   --second-bg-color: #fff;
@@ -85,10 +86,22 @@
       border-color: var(--table-border-color);
       color: var(--second-text-color) !important; }
 
+@font-face {
+  font-family: 'MiSans Regular';
+  src: url("../font/MiSans-Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'MiSans Bold';
+  src: url("../font/MiSans-Bold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Cascadia Code Regular';
+  src: url("../font/CascadiaCode-Regular.ttf") format("truetype"); }
+
 :root body {
   margin: 0;
   height: 100vh;
-  padding-top: 45px; }
+  padding-top: 50px; }
   :root body a {
     color: inherit; }
     :root body a:hover, :root body a:hover .iconfont {
@@ -96,12 +109,13 @@
       color: #3273dc !important; }
   :root body .tag.post-item-tag {
     margin-right: 5px;
-    font-weight: bold;
-    color: darkorange;
+    font-family: 'MiSans Bold';
+    font-weight: normal;
+    color: #459bac;
     font-style: normal;
     border-radius: 10px;
     background: transparent;
-    border: 2px solid darkorange; }
+    border: 2px solid #459bac; }
   :root body .button.is-default {
     height: 40px;
     border: none;
@@ -119,6 +133,18 @@
       margin: 0 5px;
       font-size: 30px; }
 
+@font-face {
+  font-family: 'MiSans Regular';
+  src: url("../font/MiSans-Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'MiSans Bold';
+  src: url("../font/MiSans-Bold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Cascadia Code Regular';
+  src: url("../font/CascadiaCode-Regular.ttf") format("truetype"); }
+
 .header-widget {
   position: fixed;
   top: 0;
@@ -126,14 +152,14 @@
   z-index: 100;
   overflow: hidden;
   width: 100vw;
-  height: 42px;
+  height: 64px;
   padding: 0 15px;
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   background: var(--top-bar-bg-color); }
   .header-widget a {
     margin: 0 8px;
-    font-weight: bold;
+    font-family: 'MiSans Bold';
     color: var(--primary-text-color); }
   .header-widget h3 {
-    font-weight: bold; }
+    font-family: 'MiSans Bold'; }

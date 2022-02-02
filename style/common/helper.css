@@ -1,8 +1,26 @@
+@font-face {
+  font-family: 'MiSans Regular';
+  src: url("../font/MiSans-Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'MiSans Bold';
+  src: url("../font/MiSans-Bold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Cascadia Code Regular';
+  src: url("../font/CascadiaCode-Regular.ttf") format("truetype"); }
+
 .debug {
   border: 1px solid red; }
 
-.is-family-serif {
-  font-family: serif; }
+.is-title {
+  font-size: 20px; }
+
+.is-family-bold {
+  font-family: 'MiSans Bold'; }
+
+.is-family-regular {
+  font-family: 'MiSans Regular'; }
 
 .is-full-width {
   width: 100%; }

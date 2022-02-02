@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'MiSans Regular';
+  src: url("../font/MiSans-Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'MiSans Bold';
+  src: url("../font/MiSans-Bold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Cascadia Code Regular';
+  src: url("../font/CascadiaCode-Regular.ttf") format("truetype"); }
+
 .about-page {
   height: 100%; }
   .about-page aside img {
@@ -6,4 +18,4 @@
     padding: 5px;
     object-fit: cover; }
   .about-page .about-title {
-    font-weight: normal; }
+    font-family: 'MiSans Regular'; }
