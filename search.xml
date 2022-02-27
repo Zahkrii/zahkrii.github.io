@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Unity 学习笔记#3 - TextMesh Pro 使用中文</title>
+      <link href="/Unity-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unity-notes-3/"/>
+      <url>/Unity-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unity-notes-3/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://s4.ax1x.com/2022/02/27/bnh3ZD.jpg" alt="$cover"></p><h2 id="动态字体"><a href="#动态字体" class="headerlink" title="动态字体"></a>动态字体</h2><p>导入字体，选择字体，<code>右键 - Create - TextMeshPro - Font Asset</code> 创建动态字体。创建好的动态字体，会根据使用过的字符，自动存储到 Atlas 中。但是当 Atlas 已经很大时，再新增一个字符，导致重建一张很大的 Atlas，就有可能引起卡顿。</p><p>除此之外动态字体经常无法正确显示中文，因此更适合用于字符量少的英文字体，对于字符量大的中文，制作静态字体更加合适。</p><h2 id="静态字体"><a href="#静态字体" class="headerlink" title="静态字体"></a>静态字体</h2><p>导入一个编码为 UTF-8 的存储常用汉字 7000 字的文本文档（3500 字，5000 字都行，根据实际需求选择）。</p><p><img src="https://s4.ax1x.com/2022/02/27/bnfT2t.png" alt="bnfT2t.png"></p><p>打开 <code>Unity &gt; Window &gt; TextMeshPro &gt; Font Asset Creator</code>，拖入导入的字体到 <strong>Source Font File</strong>.</p><p><img src="https://s4.ax1x.com/2022/02/27/bnf45d.png" alt="bnf45d.png"></p><p><strong>Atlas Resolution</strong> 根据字符量选择，越大越清晰。如果字符量很大需设置更高分辨率，默认 4096 x 4096. 当静态字体的 <strong>Atlas Resolution</strong> 设置过小,使用字体时放大字体，会有边缘粘滞模糊。</p><p><strong>Character Set</strong> 选择 ‘Characters from File’, <strong>Character File</strong> 选择导入的文本文档。</p><p><strong>Render Mode</strong> 选择 ‘SDFAA’.</p><p>设置完成点击 <strong>Generate Font Atlas</strong>. 等待一段时间后（根据字符量决定），生成 Font Asset. 最后记得点 <strong>Save</strong>.</p><h2 id="Font-Fallback"><a href="#Font-Fallback" class="headerlink" title="Font Fallback"></a>Font Fallback</h2><p>当本字体中缺少字符时，可以从设置的 Fallback 列表（同样是 TextMesh Pro 字体）中查找字符。基于这个特性，可以比较好地解决字体大贴图重建的问题。</p><p><img src="https://s4.ax1x.com/2022/02/27/bnfIPA.png" alt="bnfIPA.png"></p><p>创建一个包含常用文字的静态字体，并设置一个 Fallback 字体，并将 Fallback 字体设置为动态 Dynamic 字体，选择一个合适的贴图尺寸（不宜过大，降低重建贴图时的开销），并勾选 <strong>Multi Atlas Textures</strong> 参数。<strong>Multi Atlas Textures</strong> 参数允许创建多张 Atlas，当字体贴图超过尺寸上限，这时又要渲染新的字符时，就会再创建一张字体贴图，从该张贴图中获取字符。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Unity 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Unity </tag>
+            
+            <tag> Notes </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Complete List of Github Markdown Emoji Markup</title>
       <link href="/Other/markdown-emoji/"/>
       <url>/Other/markdown-emoji/</url>
@@ -104,6 +131,31 @@
         <tags>
             
             <tag> Hexo </tag>
+            
+            <tag> Archived </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Recent Work</title>
+      <link href="/Other/recent-work/"/>
+      <url>/Other/recent-work/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://s4.ax1x.com/2022/02/28/bu9mHe.jpg" alt="$cover"></p><h2 id="2021年"><a href="#2021年" class="headerlink" title="2021年"></a>2021年</h2><style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-dcOBZqNGcCzjuacn" src="https://player.bilibili.com/player.html?bvid=BV1Bm4y1R7fb&amp;page=1&amp;high_quality=1&amp;danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-dcOBZqNGcCzjuacn").style.height=document.getElementById("mmedia-dcOBZqNGcCzjuacn").scrollWidth*0.76+"px";    window.onresize = function(){      document.getElementById("mmedia-dcOBZqNGcCzjuacn").style.height=document.getElementById("mmedia-dcOBZqNGcCzjuacn").scrollWidth*0.76+"px";    }; </script><p><img src="https://s4.ax1x.com/2022/02/28/bupctA.jpg" alt="bupctA.jpg"></p><p><img src="https://s4.ax1x.com/2022/02/28/bupgfI.jpg" alt="bupgfI.jpg"></p><p><img src="https://s4.ax1x.com/2022/02/28/bupRpt.jpg" alt="bupRpt.jpg"></p><p><img src="https://s4.ax1x.com/2022/02/28/bupf6f.png" alt="bupf6f.png"></p><h2 id="2022年"><a href="#2022年" class="headerlink" title="2022年"></a>2022年</h2><h3 id="02月"><a href="#02月" class="headerlink" title="02月"></a>02月</h3><p><img src="https://s4.ax1x.com/2022/02/28/bupW1P.png" alt="bupW1P.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Other </category>
+          
+      </categories>
+      
+      
+        <tags>
             
             <tag> Archived </tag>
             
