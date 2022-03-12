@@ -1,0 +1,68 @@
+<!DOCTYPE html><html class="appearance-auto" lang="en"><head><meta charset="UTF-8"><title>WPF 开发经验笔记（持续更新）</title><meta name="description" content="My personal web pages."><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><script src="/js/highlight.pack.js"></script><meta name="description" content="
+记录一些可能用上的开发技巧与常用代码，方便之后查阅。
+启动窗口更改 App.xaml 文件，StartupUri 为启动窗口。
+&amp;lt;Application ...
+             StartupUri=&quot;Windows/Splash.xaml&quot;&amp;gt;
+    &amp;lt;Application.Resources&amp;gt;
+        &amp;lt;!-- ... --&amp;gt;
+    &amp;lt;/Application.Resources&amp;gt;
+&amp;lt;/Application&amp;gt;
+
+异形窗体和亚克力特效（WindowChrome 相关）参考吕毅博客：
+
+使用 SetWindowCompositionAttribute 来控制程序的窗口边框和背景（可以做 Acrylic 亚克力效果、模糊效果.."><meta name="generator" content="Hexo 6.0.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0 is-title"><h2><a href="/">Zahkrii's blog</a></h2></section><h3 class="is-hidden-mobile is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">WPF 开发经验笔记（持续更新）</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">click_back_to_the_top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">home</a></h3><h3 class="is-inline-block"><a href="/about">about</a></h3><h3 class="is-inline-block"><a href="/archives">archive</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">home</a></h3><h3 class="is-inline-block"><a href="/about">about</a></h3><h3 class="is-inline-block"><a href="/archives">archive</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E7%AA%97%E5%8F%A3"><span class="toc-text">启动窗口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E5%BD%A2%E7%AA%97%E4%BD%93%E5%92%8C%E4%BA%9A%E5%85%8B%E5%8A%9B%E7%89%B9%E6%95%88%EF%BC%88WindowChrome-%E7%9B%B8%E5%85%B3%EF%BC%89"><span class="toc-text">异形窗体和亚克力特效（WindowChrome 相关）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%8E%A5%E7%AE%A1%E7%AA%97%E4%BD%93%E5%85%B3%E9%97%AD%E6%8C%89%E9%92%AE%E9%80%BB%E8%BE%91%E5%B9%B6%E5%AE%9E%E7%8E%B0%E6%9C%80%E5%B0%8F%E5%8C%96%E5%88%B0%E6%89%98%E7%9B%98"><span class="toc-text">如何接管窗体关闭按钮逻辑并实现最小化到托盘</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F"><span class="toc-text">实现单例模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#async-x2F-await-%E5%85%B3%E9%94%AE%E5%AD%97%E5%AE%9E%E7%8E%B0%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C"><span class="toc-text">async&#x2F;await 关键字实现异步操作</span></a></li></ol></div><div class="column is-9"><header class="my-4"><a href="/tags/Notes"><i class="tag post-item-tag">Notes</i></a><a href="/tags/WPF"><i class="tag post-item-tag">WPF</i></a><a href="/tags/Windows"><i class="tag post-item-tag">Windows</i></a></header><h1 class="mt-0 mb-1 is-family-bold" id="postTitle">WPF 开发经验笔记（持续更新）</h1><time class="has-text-grey" datetime="2022-03-12T03:23:22.000Z">2022-03-12</time><article class="mt-2 post-content"><p><img src="https://s1.ax1x.com/2022/03/12/bTbYVS.jpg" alt="$cover"></p>
+<p>记录一些可能用上的开发技巧与常用代码，方便之后查阅。</p>
+<h2 id="启动窗口"><a href="#启动窗口" class="headerlink" title="启动窗口"></a>启动窗口</h2><p>更改 <code>App.xaml</code> 文件，<code>StartupUri</code> 为启动窗口。</p>
+<pre><code class="XML">&lt;Application ...
+             StartupUri="Windows/Splash.xaml"&gt;
+    &lt;Application.Resources&gt;
+        &lt;!-- ... --&gt;
+    &lt;/Application.Resources&gt;
+&lt;/Application&gt;
+</code></pre>
+<h2 id="异形窗体和亚克力特效（WindowChrome-相关）"><a href="#异形窗体和亚克力特效（WindowChrome-相关）" class="headerlink" title="异形窗体和亚克力特效（WindowChrome 相关）"></a>异形窗体和亚克力特效（WindowChrome 相关）</h2><p>参考吕毅博客：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.walterlv.com/post/set-window-composition-attribute">使用 SetWindowCompositionAttribute 来控制程序的窗口边框和背景（可以做 Acrylic 亚克力效果、模糊效果、主题色效果等）</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.walterlv.com/post/wpf-transparent-window-without-allows-transparency.html">WPF 制作高性能的透明背景异形窗口（使用 WindowChrome 而不要使用 AllowsTransparency=True）</a></li>
+</ul>
+<h2 id="如何接管窗体关闭按钮逻辑并实现最小化到托盘"><a href="#如何接管窗体关闭按钮逻辑并实现最小化到托盘" class="headerlink" title="如何接管窗体关闭按钮逻辑并实现最小化到托盘"></a>如何接管窗体关闭按钮逻辑并实现最小化到托盘</h2><p>使用开源控件库 <a target="_blank" rel="noopener" href="https://github.com/HandyOrg/HandyControl">Handy Control</a> 实现托盘图标。</p>
+<pre><code class="C#">private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+{
+    // 取消关闭操作
+    e.Cancel = true;
+    // 执行其他操作
+    this.Hide();
+}
+</code></pre>
+<h2 id="实现单例模式"><a href="#实现单例模式" class="headerlink" title="实现单例模式"></a>实现单例模式</h2><pre><code class="C#">private static Base64Tool instance;
+
+public static Base64Tool Instance
+{
+    get
+    {
+        // 如果实例不存在，实例化一个，否则调用同一个
+        if (instance == null)
+            instance = new Base64Tool();
+        return instance;
+    }
+}
+</code></pre>
+<h2 id="async-x2F-await-关键字实现异步操作"><a href="#async-x2F-await-关键字实现异步操作" class="headerlink" title="async/await 关键字实现异步操作"></a>async/await 关键字实现异步操作</h2><pre><code class="C#">public async void Screenshot_Snapped(string str)
+{
+    var asyncResult = await AsyncTask(str);
+}
+
+private static async Task&lt;string&gt; AsyncTask(string str)
+{
+    var result = await Task.Run(() =&gt;
+    {
+        // do something
+        return "Success! " + str;
+    });
+    return result;
+}
+</code></pre>
+</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><em></em><a class="button is-default" href="/Unity-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unity-notes-3/" title="Unity 学习笔记#3 - TextMesh Pro 使用中文"><span class="has-text-weight-semibold">next: Unity 学习笔记#3 - TextMesh Pro 使用中文</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0"><section class="sns-container"><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/Zahkrii"><i class="iconfont icon-github"></i></a><!-- Ins--><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><!-- bilibili--><a title="bilibili" target="_blank" rel="noopener nofollow" href="//space.bilibili.com/30374773"><i class="iconfont icon-bilibili-fill"></i></a></section><p><span>Copyright ©</span><span> Zahkrii 2022</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" rel="noopener" href="//github.com/haojen">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div><div><span></span></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script src="/js/post.js"></script></body></html>
