@@ -21,23 +21,16 @@
 打开 Unity &amp;gt; Window &amp;gt; TextMeshPro &amp;gt; Font Asset Creator，拖入导入的字体到 Source Font File.
 
 ..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/Unity-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unity-notes-3/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="https://s4.ax1x.com/2022/02/06/HKapKe.jpg" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/Unity-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unity-notes-2/"><img class="post-cover-img js-img-fadeIn" src="https://s4.ax1x.com/2022/02/06/HKapKe.jpg" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/Unity"><i class="tag post-item-tag">Unity</i></a><a href="/tags/Notes"><i class="tag post-item-tag">Notes</i></a></header><h2 class="mt-4 mb-0 is-family-bold"><a href="/Unity-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unity-notes-2/">Unity 学习笔记#2 - UI 逻辑</a></h2><time class="has-text-grey" datetime="2022-02-06T12:25:36.000Z">2022-02-06</time><p class="is-flex-grow-2 mt-2">
-画布 Render ModeUI 中 Canvas组件使用的Render Mode一般为Screen Scene - Overlay，覆盖于屏幕最上方，与相机无关。
+UI 渲染模式UI 分为 World Space 和 Screen Space（Camera/Overlay），屏幕空间 - 覆盖模式下 UI 处于画面最顶层，不能被画面中的其他物体遮挡。屏幕空间 - 摄像机模式下 UI 和摄像机相关，随摄像机设置改变。世界空间的渲染模式会导致 UI 可能位于普通 3D 物体的前面或者后面显示，可以被遮挡，被视为与场景中其他普通游戏对象性质相同的类似于 Plane 的游戏物体。
+World Space Tips
+需要指定一个摄像机
 
-Render Texture
-新建一个 Render Texture，并附给 UI 组件的 RawImage 组件。
+大小一般为 1920x1080，过小可能会造成模糊
 
-在场景添加一个专用相机与模型，相机对准模型，并设置相机的 Clear Flags 以及 Target Texture.
-
-
-
-如果 Render Texture 模糊，修改一下其分辨率，默认 256 x 256.
-
-UI逻辑可视化创建及事件绑定
-通过 Hierarchy 面板创建 UI &amp;gt; Button.
+Scale属性与屏幕空间模式下的比例为 1:100，也就是设置为0.01
 
 
-
-创建一个脚本 TestClick.cs, 定义了一个 Click() 的 public 方法(一定要是 p..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/Unity-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unity-notes-2/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="https://s4.ax1x.com/2022/02/02/HAXIhT.jpg" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/Unity-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unity-notes-1/"><img class="post-cover-img js-img-fadeIn" src="https://s4.ax1x.com/2022/02/02/HAXIhT.jpg" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/Unity"><i class="tag post-item-tag">Unity</i></a><a href="/tags/Notes"><i class="tag post-item-tag">Notes</i></a></header><h2 class="mt-4 mb-0 is-family-bold"><a href="/Unity-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unity-notes-1/">Unity 学习笔记#1 - 网络消息处理</a></h2><time class="has-text-grey" datetime="2022-02-02T10:04:09.000Z">2022-02-02</time><p class="is-flex-grow-2 mt-2">
+画布 Render ModeUI 中 Canvas组件使用的Render Mode一般为Screen Scen..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/Unity-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unity-notes-2/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="https://s4.ax1x.com/2022/02/02/HAXIhT.jpg" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/Unity-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unity-notes-1/"><img class="post-cover-img js-img-fadeIn" src="https://s4.ax1x.com/2022/02/02/HAXIhT.jpg" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/Unity"><i class="tag post-item-tag">Unity</i></a><a href="/tags/Notes"><i class="tag post-item-tag">Notes</i></a></header><h2 class="mt-4 mb-0 is-family-bold"><a href="/Unity-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unity-notes-1/">Unity 学习笔记#1 - 网络消息处理</a></h2><time class="has-text-grey" datetime="2022-02-02T10:04:09.000Z">2022-02-02</time><p class="is-flex-grow-2 mt-2">
 添加自定义协议，实现自定义消息收发。
 添加自定义协议添加自定义Request前往 ..\Src\Lib\proto 打开 message.proto 文件，在 message NetMessageRequest 下添加自定义 Request. 等号后面按 1、2、3 依次摆列。
 message NetMessageRequest{
@@ -51,7 +44,7 @@ message NetMessageRequest{
   FirstTestRequest firstTest = 10;
 }
 
-空白处添加自定义 Request. 等号后面 1、2、3 依次摆列..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/Unity-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unity-notes-1/">Read more</a></section></article></section><aside class="column is-hidden-mobile is-4-tablet is-3-widescreen"><div style="position: sticky; top: 50px;"><main class="aside-card-container tag-widget is-in-tag-page"><h3>tag</h3><section><a href="/tags/Hexo"><span class="tag post-item-tag" style="margin-bottom: 5px;">Hexo</span></a><a href="/tags/Archived"><span class="tag post-item-tag" style="margin-bottom: 5px;">Archived</span></a><a href="/tags/Unity"><span class="tag post-item-tag" style="margin-bottom: 5px;">Unity</span></a><a href="/tags/Notes"><span class="tag post-item-tag" style="margin-bottom: 5px;">Notes</span></a><a href="/tags/Emoji"><span class="tag post-item-tag" style="margin-bottom: 5px;">Emoji</span></a><a href="/tags/Github"><span class="tag post-item-tag" style="margin-bottom: 5px;">Github</span></a><a href="/tags/WPF"><span class="tag post-item-tag" style="margin-bottom: 5px;">WPF</span></a><a href="/tags/Windows"><span class="tag post-item-tag" style="margin-bottom: 5px;">Windows</span></a></section></main></div></aside></div></article><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
+空白处添加自定义 Request. 等号后面 1、2、3 依次摆列..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/Unity-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unity-notes-1/">Read more</a></section></article></section><aside class="column is-hidden-mobile is-4-tablet is-3-widescreen"><div style="position: sticky; top: 50px;"><main class="aside-card-container tag-widget is-in-tag-page"><h3>tag</h3><section><a href="/tags/Hexo"><span class="tag post-item-tag" style="margin-bottom: 5px;">Hexo</span></a><a href="/tags/Archived"><span class="tag post-item-tag" style="margin-bottom: 5px;">Archived</span></a><a href="/tags/Unity"><span class="tag post-item-tag" style="margin-bottom: 5px;">Unity</span></a><a href="/tags/Notes"><span class="tag post-item-tag" style="margin-bottom: 5px;">Notes</span></a><a href="/tags/Emoji"><span class="tag post-item-tag" style="margin-bottom: 5px;">Emoji</span></a><a href="/tags/Github"><span class="tag post-item-tag" style="margin-bottom: 5px;">Github</span></a><a href="/tags/WPF"><span class="tag post-item-tag" style="margin-bottom: 5px;">WPF</span></a><a href="/tags/Windows"><span class="tag post-item-tag" style="margin-bottom: 5px;">Windows</span></a><a href="/tags/Blender"><span class="tag post-item-tag" style="margin-bottom: 5px;">Blender</span></a><a href="/tags/3D"><span class="tag post-item-tag" style="margin-bottom: 5px;">3D</span></a></section></main></div></aside></div></article><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
 
 window.addEventListener('resize', $claudia.throttle(function () {
     var images = document.querySelectorAll('.js-img-fadeIn')
