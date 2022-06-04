@@ -4,11 +4,65 @@
   
     
     <entry>
+      <title>Unity 学习笔记#4 - 编写脚本</title>
+      <link href="/Unity-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unity-notes-4/"/>
+      <url>/Unity-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unity-notes-4/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://s1.ax1x.com/2022/06/04/XacVYT.jpg" alt="$cover"></p><p>2022年06月02日更新。</p><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul><li><p>需要经常判断资源是否为空，资源丢失或加载失败很常见</p></li><li><p>单例模式 monoBehavior 改为 MonoSingleton&lt;&gt;</p></li><li><p>MonoSingleton 单例不能用 Start()，会覆盖父类里维持实例的Start()，必要时使用 override void OnStart()</p></li><li><p>MonoSingleton 单例不能绑定在多次进入的场景里，但在永远只进入一次的场景里可以使用，用在多次进入的场景里会出现多个实例对象的情况（每进入一次场景创建一个实例）</p></li><li><p>出现异常不报错的情况下可以正向或逆向追溯排查，正向：根据逻辑走，逆向：通过期望结果反推</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Unity 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Unity </tag>
+            
+            <tag> Notes </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Unity 学习笔记#2 - UI 逻辑</title>
+      <link href="/Unity-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unity-notes-2/"/>
+      <url>/Unity-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unity-notes-2/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://s4.ax1x.com/2022/02/06/HKapKe.jpg" alt="$cover"></p><p>2022年05月30日更新。</p><h2 id="UI-渲染模式"><a href="#UI-渲染模式" class="headerlink" title="UI 渲染模式"></a>UI 渲染模式</h2><p>UI 分为 World Space 和 Screen Space（Camera/Overlay），屏幕空间 - 覆盖模式下 UI 处于画面最顶层，不能被画面中的其他物体遮挡。屏幕空间 - 摄像机模式下 UI 和摄像机相关，随摄像机设置改变。世界空间的渲染模式会导致 UI 可能位于普通 3D 物体的前面或者后面显示，可以被遮挡，被视为与场景中其他普通游戏对象性质相同的类似于 Plane 的游戏物体。</p><h3 id="World-Space-Tips"><a href="#World-Space-Tips" class="headerlink" title="World Space Tips"></a>World Space Tips</h3><ul><li><p>需要指定一个摄像机</p></li><li><p>大小一般为 1920x1080，过小可能会造成模糊</p></li><li><p>Scale属性与屏幕空间模式下的比例为 1:100，也就是设置为0.01</p></li></ul><h2 id="画布-Render-Mode"><a href="#画布-Render-Mode" class="headerlink" title="画布 Render Mode"></a>画布 Render Mode</h2><p>UI 中 Canvas组件使用的Render Mode一般为Screen Scene - Overlay，覆盖于屏幕最上方，与相机无关。</p><hr><h2 id="Render-Texture"><a href="#Render-Texture" class="headerlink" title="Render Texture"></a>Render Texture</h2><ul><li><p>新建一个 Render Texture，并附给 UI 组件的 RawImage 组件。</p></li><li><p>在场景添加一个专用相机与模型，相机对准模型，并设置相机的 Clear Flags 以及 Target Texture.</p></li></ul><p><img src="https://s4.ax1x.com/2022/02/06/HKaKbj.png" alt="HKaKbj.png"></p><p>如果 Render Texture 模糊，修改一下其分辨率，默认 256 x 256.</p><hr><h2 id="UI逻辑"><a href="#UI逻辑" class="headerlink" title="UI逻辑"></a>UI逻辑</h2><h3 id="可视化创建及事件绑定"><a href="#可视化创建及事件绑定" class="headerlink" title="可视化创建及事件绑定"></a>可视化创建及事件绑定</h3><ul><li>通过 Hierarchy 面板创建 UI &gt; Button.</li></ul><p><img src="https://s4.ax1x.com/2022/02/06/HKaYxU.png" alt="HKaYxU.png"></p><ul><li>创建一个脚本 <code>TestClick.cs</code>, 定义了一个 <code>Click()</code> 的 <code>public</code> 方法(一定要是 public 的方法).</li></ul><p><img src="https://s4.ax1x.com/2022/02/06/HKaJ2T.jpg" alt="HKaJ2T.jpg"></p><ul><li><p>把脚本 <code>TestClick.cs</code> 挂到一个游戏对象或者 Button 本身上。</p></li><li><p>把挂脚本的游戏对象拖到图中 Button 画红圈的位置。</p></li></ul><p><img src="https://s4.ax1x.com/2022/02/06/HKaNMF.jpg" alt="HKaNMF.jpg"></p><ul><li>点击图中 Button 的画蓝圈的位置，选择 <code>TestClick</code> 脚本，选择 <code>Click()</code> 方法。</li></ul><p>完成。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Unity 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Unity </tag>
+            
+            <tag> Notes </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Blender 快捷键</title>
       <link href="/Blender/blender-hotkey/"/>
       <url>/Blender/blender-hotkey/</url>
       
-        <content type="html"><![CDATA[<table><thead><tr><th>Blender 快捷键</th></tr></thead><tbody><tr><td><code>Num 1</code> 主视图</td></tr><tr><td><code>Tab</code> 切换编辑模式</td></tr><tr><td><code>Ctrl</code> + <code>A</code> 应用</td></tr><tr><td><code>滚轮</code> 缩放</td></tr><tr><td><code>按住滚轮</code> 自由旋转</td></tr><tr><td><code>Shift</code> + <code>滚轮</code> 平移</td></tr><tr><td><code>Ctrl</code> + <code>B</code> 倒角</td></tr><tr><td><code>Alt</code> + <code>Z</code> 透显模式</td></tr><tr><td><code>Shift</code> + <code>A</code> 新建网格 / 添加 Shader 节点</td></tr><tr><td><code>Shift</code> + <code>S</code> 改变原点中心</td></tr><tr><td><code>N</code> 呼出侧边菜单</td></tr><tr><td><code>Num 0</code> 相机视图</td></tr><tr><td><code>Ctrl</code> + <code>Alt</code> + <code>Num 0</code> 活动相机对齐到当前视角</td></tr><tr><td><code>G</code> 移动</td></tr><tr><td><code>S</code> 缩放</td></tr><tr><td><code>R</code> 旋转</td></tr><tr><td><code>Ctrl</code> + <code>Alt</code> + <code>Q</code> 四视图</td></tr><tr><td><code>Num .</code> or <code>Home</code> 适合视图大小</td></tr><tr><td><code>E</code> 挤压出面</td></tr><tr><td><code>I</code> 面内挤压</td></tr><tr><td><code>Shift</code> + <code>G</code> 选择相似</td></tr><tr><td><code>Ctrl</code> + <code>Shift</code> + <code>B</code> 点倒角</td></tr><tr><td><code>J</code> 连接点</td></tr><tr><td><code>Z</code> 着色方式</td></tr><tr><td><code>Shift</code> + <code>D</code> 复制</td></tr><tr><td><code>Shift</code> + <code>右键拖动</code> 划分节点连线</td></tr></tbody></table>]]></content>
+        <content type="html"><![CDATA[<p><img src="https://s1.ax1x.com/2022/06/04/XacEkV.jpg" alt="$cover"></p><table><thead><tr><th>Blender 快捷键</th></tr></thead><tbody><tr><td><code>Num 1</code> 主视图</td></tr><tr><td><code>Tab</code> 切换编辑模式</td></tr><tr><td><code>Ctrl</code> + <code>A</code> 应用</td></tr><tr><td><code>滚轮</code> 缩放</td></tr><tr><td><code>按住滚轮</code> 自由旋转</td></tr><tr><td><code>Shift</code> + <code>滚轮</code> 平移</td></tr><tr><td><code>Ctrl</code> + <code>B</code> 倒角</td></tr><tr><td><code>Alt</code> + <code>Z</code> 透显模式</td></tr><tr><td><code>Shift</code> + <code>A</code> 新建网格 / 添加 Shader 节点</td></tr><tr><td><code>Shift</code> + <code>S</code> 改变原点中心</td></tr><tr><td><code>N</code> 呼出侧边菜单</td></tr><tr><td><code>Num 0</code> 相机视图</td></tr><tr><td><code>Ctrl</code> + <code>Alt</code> + <code>Num 0</code> 活动相机对齐到当前视角</td></tr><tr><td><code>G</code> 移动</td></tr><tr><td><code>S</code> 缩放</td></tr><tr><td><code>R</code> 旋转</td></tr><tr><td><code>Ctrl</code> + <code>Alt</code> + <code>Q</code> 四视图</td></tr><tr><td><code>Num .</code> or <code>Home</code> 适合视图大小</td></tr><tr><td><code>E</code> 挤压出面</td></tr><tr><td><code>I</code> 面内挤压</td></tr><tr><td><code>Shift</code> + <code>G</code> 选择相似</td></tr><tr><td><code>Ctrl</code> + <code>Shift</code> + <code>B</code> 点倒角</td></tr><tr><td><code>J</code> 连接点</td></tr><tr><td><code>Z</code> 着色方式</td></tr><tr><td><code>Shift</code> + <code>D</code> 复制</td></tr><tr><td><code>Shift</code> + <code>右键拖动</code> 划分节点连线</td></tr></tbody></table>]]></content>
       
       
       <categories>
@@ -108,33 +162,6 @@
             <tag> Emoji </tag>
             
             <tag> Github </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Unity 学习笔记#2 - UI 逻辑</title>
-      <link href="/Unity-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unity-notes-2/"/>
-      <url>/Unity-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unity-notes-2/</url>
-      
-        <content type="html"><![CDATA[<p><img src="https://s4.ax1x.com/2022/02/06/HKapKe.jpg" alt="$cover"></p><h2 id="UI-渲染模式"><a href="#UI-渲染模式" class="headerlink" title="UI 渲染模式"></a>UI 渲染模式</h2><p>UI 分为 World Space 和 Screen Space（Camera/Overlay），屏幕空间 - 覆盖模式下 UI 处于画面最顶层，不能被画面中的其他物体遮挡。屏幕空间 - 摄像机模式下 UI 和摄像机相关，随摄像机设置改变。世界空间的渲染模式会导致 UI 可能位于普通 3D 物体的前面或者后面显示，可以被遮挡，被视为与场景中其他普通游戏对象性质相同的类似于 Plane 的游戏物体。</p><h3 id="World-Space-Tips"><a href="#World-Space-Tips" class="headerlink" title="World Space Tips"></a>World Space Tips</h3><ul><li><p>需要指定一个摄像机</p></li><li><p>大小一般为 1920x1080，过小可能会造成模糊</p></li><li><p>Scale属性与屏幕空间模式下的比例为 1:100，也就是设置为0.01</p></li></ul><h2 id="画布-Render-Mode"><a href="#画布-Render-Mode" class="headerlink" title="画布 Render Mode"></a>画布 Render Mode</h2><p>UI 中 Canvas组件使用的Render Mode一般为Screen Scene - Overlay，覆盖于屏幕最上方，与相机无关。</p><hr><h2 id="Render-Texture"><a href="#Render-Texture" class="headerlink" title="Render Texture"></a>Render Texture</h2><ul><li><p>新建一个 Render Texture，并附给 UI 组件的 RawImage 组件。</p></li><li><p>在场景添加一个专用相机与模型，相机对准模型，并设置相机的 Clear Flags 以及 Target Texture.</p></li></ul><p><img src="https://s4.ax1x.com/2022/02/06/HKaKbj.png" alt="HKaKbj.png"></p><p>如果 Render Texture 模糊，修改一下其分辨率，默认 256 x 256.</p><hr><h2 id="UI逻辑"><a href="#UI逻辑" class="headerlink" title="UI逻辑"></a>UI逻辑</h2><h3 id="可视化创建及事件绑定"><a href="#可视化创建及事件绑定" class="headerlink" title="可视化创建及事件绑定"></a>可视化创建及事件绑定</h3><ul><li>通过 Hierarchy 面板创建 UI &gt; Button.</li></ul><p><img src="https://s4.ax1x.com/2022/02/06/HKaYxU.png" alt="HKaYxU.png"></p><ul><li>创建一个脚本 <code>TestClick.cs</code>, 定义了一个 <code>Click()</code> 的 <code>public</code> 方法(一定要是 public 的方法).</li></ul><p><img src="https://s4.ax1x.com/2022/02/06/HKaJ2T.jpg" alt="HKaJ2T.jpg"></p><ul><li><p>把脚本 <code>TestClick.cs</code> 挂到一个游戏对象或者 Button 本身上。</p></li><li><p>把挂脚本的游戏对象拖到图中 Button 画红圈的位置。</p></li></ul><p><img src="https://s4.ax1x.com/2022/02/06/HKaNMF.jpg" alt="HKaNMF.jpg"></p><ul><li>点击图中 Button 的画蓝圈的位置，选择 <code>TestClick</code> 脚本，选择 <code>Click()</code> 方法。</li></ul><p>完成。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Unity 学习笔记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Unity </tag>
-            
-            <tag> Notes </tag>
             
         </tags>
       
