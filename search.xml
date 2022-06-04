@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Unity 学习笔记#5 - UI 框架</title>
+      <link href="/Unity-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unity-notes-5/"/>
+      <url>/Unity-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unity-notes-5/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://s1.ax1x.com/2022/06/04/XduRD1.jpg" alt="$cover"></p><p>实现一个可扩展的简单 UI 框架，由 UI 管理器统一管理。</p><p><img src="https://s1.ax1x.com/2022/06/04/XduYcj.png" alt="配图"></p><h2 id="UI-管理器-UIManager"><a href="#UI-管理器-UIManager" class="headerlink" title="UI 管理器 - UIManager"></a>UI 管理器 - UIManager</h2><p>统一管理所有 UI 界面，包括 UI 的显示与关闭。</p><pre><code class="C#">/// &lt;summary&gt;/// UI 管理器/// &lt;/summary&gt;internal class UIManager : Singleton&lt;UIManager&gt; // 单例{    // UI 元素    private class UIElement    {        // UI资源 Prefab 路径        public string Resource;        // 是否缓存        public bool Cache;        // Cache = true，存入 Instance        public GameObject Instance;    }    // 存储所有已加载的 UI 预制体，以其 Type 为索引    private Dictionary&lt;Type, UIElement&gt; UIResources = new Dictionary&lt;Type, UIElement&gt;();    public UIManager()    {        // 加载 UI，每个 UI Prefab 必做，UIElement 表示一个 UI 界面预制体        UIResources.Add(typeof(UIElement), new UIElement() { Resource = "UI/UITest", Cache = true });    }    ~UIManager()    {    }    /// &lt;summary&gt;    /// 显示 UI    /// &lt;/summary&gt;    /// &lt;typeparam name="T"&gt;需要显示的 UI&lt;/typeparam&gt;    /// &lt;returns&gt;需要显示的 UI&lt;/returns&gt;    public T Show&lt;T&gt;()    {        //可引入声音管理器播放声音        // SoundManager.Instance.PlaySound("ui_open");        Type type = typeof(T);        // 判断是否存在        if (UIResources.ContainsKey(type))        {            // 取出            UIElement info = UIResources[type];            // 如果已缓存入实例，直接激活            if (info.Instance != null)            {                info.Instance.SetActive(true);            }            else // 否则读取Prefab            {                UnityEngine.Object prefab = Resources.Load(info.Resource);                if (prefab == null)                {                    return default(T);                }                info.Instance = (GameObject)GameObject.Instantiate(prefab);            }            return info.Instance.GetComponent&lt;T&gt;();        }        return default(T);    }    /// &lt;summary&gt;    /// 关闭UI    /// &lt;/summary&gt;    /// &lt;param name="type"&gt;需要关闭的 UI&lt;/param&gt;    public void Close(Type type)    {        //可引入声音管理器播放声音        // SoundManager.Instance.PlaySound("ui_close");        if (UIResources.ContainsKey(type))        {            UIElement info = UIResources[type];            if (info.Cache)            {                info.Instance.SetActive(false);            }            else            {                GameObject.Destroy(info.Instance);                info.Instance = null;            }        }    }}</code></pre><h2 id="抽象父类-UIWindow"><a href="#抽象父类-UIWindow" class="headerlink" title="抽象父类 - UIWindow"></a>抽象父类 - UIWindow</h2><p>所有UI的父类，每个UI窗口都得继承自 UIWindow，包含几个常用方法（当点击关闭按钮，当点击确定按钮），子类可以不用重写。</p><pre><code class="C#">/// &lt;summary&gt;/// 所有UI的父类，包含几个常用方法，子类可以不用重写/// &lt;/summary&gt;public abstract class UIWindow : MonoBehaviour{    // Close 委托    public delegate void CloseHandler(UIWindow sender, WindowResult result);    // Close 事件    public event CloseHandler OnClose;    public virtual System.Type Type    {        get { return this.GetType(); }    }    // 窗口返回结果    public enum WindowResult    {        None = 0,        Yes,        No,    }    /// &lt;summary&gt;    /// 关闭窗口时调用    /// &lt;/summary&gt;    /// &lt;param name="result"&gt;返回结果&lt;/param&gt;    public void Close(WindowResult result = WindowResult.None)    {        UIManager.Instance.Close(this.Type);        if (this.OnClose != null)            this.OnClose(this, result);        this.OnClose = null;    }    /// &lt;summary&gt;    /// 当点击关闭按钮    /// &lt;/summary&gt;    public virtual void OnCloseClick()    {        this.Close();    }    /// &lt;summary&gt;    /// 当点击确定按钮    /// &lt;/summary&gt;    public virtual void OnYesClick()    {        this.Close(WindowResult.Yes);    }}</code></pre><h2 id="UI-元素-继承自-UIWindow"><a href="#UI-元素-继承自-UIWindow" class="headerlink" title="UI 元素 - 继承自 UIWindow"></a>UI 元素 - 继承自 UIWindow</h2><p>这里可以重写父类方法，或者实现自定义功能，此脚本需绑定在一个 UI 预制体上。</p><pre><code class="C#">public class UIElement : UIWindow{    // Start is called before the first frame update    private void Start()    {    }    // Update is called once per frame    private void Update()    {    }}</code></pre><h2 id="显示-UI-元素"><a href="#显示-UI-元素" class="headerlink" title="显示 UI 元素"></a>显示 UI 元素</h2><p>使用以下代码：</p><pre><code class="C#">UIManager.Instance.Show&lt;UIElement&gt;();</code></pre><p>因为 Show&lt;T&gt;() 有返回值 T，可以这样写：</p><pre><code class="C#">UIElement element = UIManager.Instance.Show&lt;UIElement&gt;();</code></pre><p>这样就能拿到 UIElement 做一些有趣的事了。例如：</p><pre><code class="C#">UIElement element = UIManager.Instance.Show&lt;UIElement&gt;();// 调用 UIElement 里的方法element.SetTitle();// 指定点击关闭按钮后的处理方法element.OnClose += element_OnClose;private void element_OnClose(UIWindow sender, UIWindow.WindowResult result){    // 一些事情    //获取UIElement等 (sender as UIElement).name;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Unity 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Unity </tag>
+            
+            <tag> Notes </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Unity 学习笔记#4 - 编写脚本</title>
       <link href="/Unity-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unity-notes-4/"/>
       <url>/Unity-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unity-notes-4/</url>
