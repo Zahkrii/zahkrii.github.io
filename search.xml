@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>VS Code 扩展 - Baker Language Support</title>
+      <link href="/Extensions/extensions-baker-lang/"/>
+      <url>/Extensions/extensions-baker-lang/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://s1.ax1x.com/2022/06/06/X00j8e.jpg" alt="$cover"></p><p>一个简单的 VS Code 扩展插件，<a href="https://github.com/Macaron-Lawrence"><code>@Macaron-Lawrence</code></a> 制作的 <a href="https://github.com/Macaron-Lawrence/fakeCakeBaker">蜜饼（假）生成器</a> 的配套工具。实现格式化代码，语法高亮，代码片段，自定义主题等功能。目前已上架 <a href="https://marketplace.visualstudio.com/items?itemName=strunmah.baker-language-support">Visual Studio Marketplace</a>.</p><p><img src="https://s1.ax1x.com/2022/06/06/X0dF5F.png" alt="演示图"></p><h2 id="下载-amp-安装"><a href="#下载-amp-安装" class="headerlink" title="下载 &amp; 安装"></a>下载 &amp; 安装</h2><h3 id="Visual-Studio-Marketplace"><a href="#Visual-Studio-Marketplace" class="headerlink" title="Visual Studio Marketplace"></a>Visual Studio Marketplace</h3><p>直接前往 <a href="https://marketplace.visualstudio.com/items?itemName=strunmah.baker-language-support">Visual Studio Marketplace</a> 下载安装。</p><h3 id="VS-Code-扩展页面搜索安装"><a href="#VS-Code-扩展页面搜索安装" class="headerlink" title="VS Code 扩展页面搜索安装"></a>VS Code 扩展页面搜索安装</h3><p><code>Ctrl</code> + <code>Shift</code> + <code>X</code> 打开 VS Code 扩展页面，搜索：<code>Baker Language Support</code> 安装。</p><h3 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h3><p>前往 <a href="https://github.com/Zahkrii/vscode-baker-language-support/releases">Github</a> 下载 vsix 安装包，双击运行进行手动安装。</p><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>文件名后缀：<code>.cake</code></p><h3 id="自定义主题"><a href="#自定义主题" class="headerlink" title="自定义主题"></a>自定义主题</h3><p>插件自带自定义主题 <code>Baker</code>，<code>Ctrl</code> + <code>K</code>, <code>T</code> 更改应用主题。</p><h3 id="语法高亮"><a href="#语法高亮" class="headerlink" title="语法高亮"></a>语法高亮</h3><p><img src="https://s1.ax1x.com/2022/06/06/X0dE8J.png" alt="语法高亮"></p><h3 id="代码片段"><a href="#代码片段" class="headerlink" title="代码片段"></a>代码片段</h3><ul><li><p>粗体 <code>bb</code> - &lt;b&gt;&lt;/b&gt;</p></li><li><p>红色强调 <code>rr</code> - &lt;red&gt;&lt;/red&gt;</p></li><li><p>空行 <code>br</code> - &lt;br&gt;</p></li><li><p>叠甲声明 <code>shield</code> -（内容太长）</p></li><li><p>图片 <code>pic</code> - &amp;lcub;&amp;lcub;&amp;lcub;pic.png</p></li><li><p>细体 <code>ll</code> - &lt;l&gt;&lt;/l&gt;</p></li><li><p>白色字体 <code>ww</code> - &lt;white&gt;&lt;/white&gt;</p></li></ul><h3 id="右键菜单-amp-快捷键"><a href="#右键菜单-amp-快捷键" class="headerlink" title="右键菜单 &amp; 快捷键"></a>右键菜单 &amp; 快捷键</h3><p><img src="https://s1.ax1x.com/2022/06/06/X0dAC4.png" alt="右键菜单"></p><ul><li><p><code>Alt</code> + <code>B</code> 设为粗体（Bold）</p></li><li><p><code>Alt</code> + <code>R</code> 红色强调（Red）</p></li></ul><h2 id="开源代码仓库"><a href="#开源代码仓库" class="headerlink" title="开源代码仓库"></a>开源代码仓库</h2><ul><li><p>假饼生成器/Fake Cake Baker：<a href="https://github.com/Macaron-Lawrence/fakeCakeBaker">https://github.com/Macaron-Lawrence/fakeCakeBaker</a></p></li><li><p>Baker Language Support：<a href="https://github.com/Zahkrii/vscode-baker-language-support">https://github.com/Zahkrii/vscode-baker-language-support</a></p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Extensions </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> VSCode </tag>
+            
+            <tag> Arknights </tag>
+            
+            <tag> Extension </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Unity 学习笔记#5 - UI 框架</title>
       <link href="/Unity-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unity-notes-5/"/>
       <url>/Unity-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unity-notes-5/</url>
