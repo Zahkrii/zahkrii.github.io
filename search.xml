@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>基于 Unity 的 MMORPG 游戏开发</title>
+      <link href="/Games/mmorpg/"/>
+      <url>/Games/mmorpg/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://s1.ax1x.com/2022/08/30/vhaOKJ.jpg" alt="$cover"></p><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>基于 Unity 开发的大型多人在线 RPG 游戏，目前仍在开发中，目前实现的功能，角色移动，小地图，UI 框架，基于配置表的道具系统。</p><h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2> <video src="\videos\2022-08-29-20-46-26.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">your browser does not support the video tag</video> ]]></content>
+      
+      
+      <categories>
+          
+          <category> Games </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Unity </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Recent Work</title>
+      <link href="/Other/recent-work/"/>
+      <url>/Other/recent-work/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://s4.ax1x.com/2022/02/28/bu9mHe.jpg" alt="$cover"></p><p>这里存档了部分作品，有独自完成的也有多人合作的，还有些不太方便展示。</p><h2 id="2021年"><a href="#2021年" class="headerlink" title="2021年"></a>2021年</h2><style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-mQyziyvFwfIHNqwl" src="https://player.bilibili.com/player.html?bvid=BV1Bm4y1R7fb&amp;page=1&amp;high_quality=1&amp;danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-mQyziyvFwfIHNqwl").style.height=document.getElementById("mmedia-mQyziyvFwfIHNqwl").scrollWidth*0.76+"px";    window.onresize = function(){      document.getElementById("mmedia-mQyziyvFwfIHNqwl").style.height=document.getElementById("mmedia-mQyziyvFwfIHNqwl").scrollWidth*0.76+"px";    }; </script><p><img src="https://s4.ax1x.com/2022/02/28/bupctA.jpg" alt="bupctA.jpg"></p><p><img src="https://s4.ax1x.com/2022/02/28/bupgfI.jpg" alt="bupgfI.jpg"></p><h2 id="2022年"><a href="#2022年" class="headerlink" title="2022年"></a>2022年</h2><style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-DIBDwFqLsljFDrAK" src="https://player.bilibili.com/player.html?bvid=BV1QY4y1j7DP&amp;page=1&amp;high_quality=1&amp;danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-DIBDwFqLsljFDrAK").style.height=document.getElementById("mmedia-DIBDwFqLsljFDrAK").scrollWidth*0.76+"px";    window.onresize = function(){      document.getElementById("mmedia-DIBDwFqLsljFDrAK").style.height=document.getElementById("mmedia-DIBDwFqLsljFDrAK").scrollWidth*0.76+"px";    }; </script><style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-eNedOkYwtIPdDCOr" src="https://player.bilibili.com/player.html?bvid=BV1nS4y1E7sB&amp;page=1&amp;high_quality=1&amp;danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-eNedOkYwtIPdDCOr").style.height=document.getElementById("mmedia-eNedOkYwtIPdDCOr").scrollWidth*0.76+"px";    window.onresize = function(){      document.getElementById("mmedia-eNedOkYwtIPdDCOr").style.height=document.getElementById("mmedia-eNedOkYwtIPdDCOr").scrollWidth*0.76+"px";    }; </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Other </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Archived </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>VS Code 扩展 - Baker Language Support</title>
       <link href="/Extensions/extensions-baker-lang/"/>
       <url>/Extensions/extensions-baker-lang/</url>
@@ -270,31 +320,6 @@
         <tags>
             
             <tag> Hexo </tag>
-            
-            <tag> Archived </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Recent Work</title>
-      <link href="/Other/recent-work/"/>
-      <url>/Other/recent-work/</url>
-      
-        <content type="html"><![CDATA[<p><img src="https://s4.ax1x.com/2022/02/28/bu9mHe.jpg" alt="$cover"></p><h2 id="2021年"><a href="#2021年" class="headerlink" title="2021年"></a>2021年</h2><style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-dcOBZqNGcCzjuacn" src="https://player.bilibili.com/player.html?bvid=BV1Bm4y1R7fb&amp;page=1&amp;high_quality=1&amp;danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-dcOBZqNGcCzjuacn").style.height=document.getElementById("mmedia-dcOBZqNGcCzjuacn").scrollWidth*0.76+"px";    window.onresize = function(){      document.getElementById("mmedia-dcOBZqNGcCzjuacn").style.height=document.getElementById("mmedia-dcOBZqNGcCzjuacn").scrollWidth*0.76+"px";    }; </script><p><img src="https://s4.ax1x.com/2022/02/28/bupctA.jpg" alt="bupctA.jpg"></p><p><img src="https://s4.ax1x.com/2022/02/28/bupgfI.jpg" alt="bupgfI.jpg"></p><p><img src="https://s4.ax1x.com/2022/02/28/bupRpt.jpg" alt="bupRpt.jpg"></p><p><img src="https://s4.ax1x.com/2022/02/28/bupf6f.png" alt="bupf6f.png"></p><h2 id="2022年"><a href="#2022年" class="headerlink" title="2022年"></a>2022年</h2><h3 id="02月"><a href="#02月" class="headerlink" title="02月"></a>02月</h3><p><img src="https://s4.ax1x.com/2022/02/28/bupW1P.png" alt="bupW1P.png"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Other </category>
-          
-      </categories>
-      
-      
-        <tags>
             
             <tag> Archived </tag>
             
