@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "思源黑体 CN";
+  src: local("思源黑体 CN VF"), local("Source Han Sans CN VF"),
+    local("SourceHanSansCNVF"), url("SourceHanSansCN-VF.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
